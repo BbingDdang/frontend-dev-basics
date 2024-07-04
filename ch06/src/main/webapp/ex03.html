@@ -3,10 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+setTimeout(function(){
+	location.href = "https://www.naver.com";	
+}, 3000);
+</script>
+
 </head>
 <body>
 	<h1>BOM(Browser Object Model)</h1>
 	<h2>3. localtion 객체</h2>
 	<h3>Refresh Page 하는 방법</h3>
+	
+	<!-- 방법 1 : f5 cached  -->
+	<button onclick="location = location;">refresh1</button>
+	<!-- 방법 2 : f5 cached  -->
+	<button onclick="location.href = location.href;">refresh2</button>
+	<!-- 방법 3 : f5 cached  -->
+	<button onclick="location.assign('');">refresh3</button>
+	<!-- 방법 4 : f5 cached  -->
+	<button onclick="location.replace(location);">refresh4</button>
+	<!-- 방법 5 : f5 cached  -->
+	<button onclick="location.reload();">refresh5</button>
+	<!-- redirect  -->
+	<button onclick="location.href='https://www.naver.com'">naver</button>
 </body>
 </html>
