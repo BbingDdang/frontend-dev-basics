@@ -3,6 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+/*
+ * 기본 이벤트 동작 막기
+ 	1. anchor : 버튼이나 메뉴로 사용할 때 
+ 	2. form: validation, ajax 방식으로 submit
+ */
+window.addEventListener('load', function(){
+	document
+		.getElementById('form-login')
+		.onsubmit = function(){
+			var email = document.getElementById("input-email").value;
+			if (email === ''){
+				alert('empty email');
+				return false;
+			}
+			
+			var password = document.getElementById('input-password').value;
+			if(password === ''){
+				alert('empty password');
+				return false;
+			}
+			
+			return true;
+	}
+});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
