@@ -48,10 +48,9 @@ public class RestApiController {
 	
 	@DeleteMapping("/{no}")
 	public JsonResult delete(
-			@PathVariable("no") Long no,
-			@RequestBody UserVo vo,
-			@RequestParam(value = "password", required=true, defaultValue="") String password) {
-		System.out.println(password);
-		return JsonResult.success(vo);
+		@PathVariable("no") Long no, 
+		@RequestParam(value="password", required=true, defaultValue="") String password) {
+		System.out.println("password:" + password);
+		return JsonResult.success(no);
 	}
 }

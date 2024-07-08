@@ -13,24 +13,69 @@
 $(function(){
 	$("#create").click(function(){
 		var vo = {
-				name: "bbingddang",
-				email: "bd@bd",
-				password: "1234",
-				gender: "male"
+			name: '둘리',
+			email: 'dooly@gmail.com',
+			password: '1234',
+			gender: 'male'
 		}
+		
 		$.ajax({
 			url: '/ch08/api/user',
 			type: 'post',
 			dataType: 'json',
 			contentType: 'application/json',
 			data: JSON.stringify(vo),
-			success: function(response){
+			success: function(response) {
 				console.log(response);
 			}
-		})
-		
-	})
+		});
+	});
+
+	$("#read").click(function(){
+		$.ajax({
+			url: '/ch08/api/user',
+			type: 'get',
+			dataType: 'json',
+			success: function(response) {
+				console.log(response);
+			}
+		});
+	});
 	
+	
+	$("#update").click(function(){
+		var vo = {
+			name: '둘리',
+			email: 'dooly@gmail.com',
+			password: '1234',
+			gender: 'male'
+		}
+		
+		$.ajax({
+			url: '/ch08/api/user/10',
+			type: 'put',
+			dataType: 'json',
+			contentType: 'application/json',
+			data: JSON.stringify(vo),
+			success: function(response) {
+				console.log(response);
+			}
+		});
+	});	
+
+	
+	$("#delete").click(function(){
+		$.ajax({
+			url: '/ch08/api/user/10',
+			type: 'delete',
+			dataType: 'json',
+			contentType: 'application/x-www-form-urlencoded',
+			data: 'password=1234',
+			success: function(response) {
+				console.log(response);
+			}
+		});
+	});	
 });
 </script>
 </head>
